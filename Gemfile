@@ -50,6 +50,8 @@ gem 'r_creds'
 gem 'redis'
 gem 'slim-rails'
 gem 'xlog'
+gem 'rails_admin', '~> 2.0'
+
 group :development, :test do
   gem 'dotenv'
 end
