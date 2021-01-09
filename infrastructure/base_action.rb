@@ -3,11 +3,12 @@
 class BaseAction
   class NonKeywordArgumentsError < StandardError; end
 
-  def self.call(*args, &block)
-    new(*args, &block).call
+  def self.call(...)
+    new(...).call
   end
 
   attr_reader :args, :data
+
   def initialize(**args)
     raise NonKeywordArgumentsError if args.present? && !args.is_a?(Hash)
 

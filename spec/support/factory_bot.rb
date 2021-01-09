@@ -9,5 +9,7 @@ end
 
 module SpecFileUploader
   include ActionDispatch::TestProcess
+  # rubocop:disable Style/ModuleFunction
   extend self
+  # rubocop:enable Style/ModuleFunction
 end
