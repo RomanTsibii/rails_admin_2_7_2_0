@@ -1,4 +1,16 @@
 h1 Article#show
-p Find me in app/views/article/show.html.slim
-= @article.title
-= @article.content
+| Title: #{@article.title}
+br
+| Content: #{ @article.content }
+br
+= image_tag @article.cover_image, width: 300
+br
+
+p
+  | Comments: #{@article.comments.count}
+
+- @article.comments.each do |c|
+  p
+    = c.commentable.email
+    br
+    = c.content
