@@ -87,3 +87,7 @@ How to run tests, linters, etc.
 
 - Linter `$ rubocop`
 - Test suit `$ rspec`
+
+### KEY
+master:e22e6b6af186d66f0fc588cca594262a
+development:7251b97ced6d7ba19d4751b092a45c06

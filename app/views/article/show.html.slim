@@ -3,7 +3,7 @@ h1 Article#show
 br
 | Content: #{ @article.content }
 br
-= image_tag @article.cover_image, width: 300
+= image_tag @article.cover_image, width: 300 if @article.cover_image.attached?
 br
 
 p

@@ -1,0 +1,7 @@
+---
+:concurrency: 5
+:pidfile: ./tmp/sidekiq.pid
+:logfile: ./log/sidekiq.log
+:queues:
+  - default
+  - mailers
