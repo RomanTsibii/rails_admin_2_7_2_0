@@ -6,6 +6,6 @@ class ArticleController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    UserMailer.welcome_email(current_user).deliver_later if current_user.present?
+    # UserMailer.welcome_email(current_user).deliver_later if current_user.present?
   end
 end
