@@ -4,8 +4,9 @@ class BaseResponse
   class NonKeywordArgumentsError < StandardError; end
 
   DEFAULT_STATUSES = %i[success fail validation_fail].freeze
+  HTTP_STATUSES = Rack::Utils::SYMBOL_TO_STATUS_CODE.keys
 
-  DEFAULT_STATUSES.each do |ds|
+  [*DEFAULT_STATUSES, *HTTP_STATUSES].each do |ds|
     define_method("#{ds}?") do
       ds.to_s == status
     end

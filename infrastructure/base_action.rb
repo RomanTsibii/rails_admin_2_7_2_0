@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class BaseAction
   class NonKeywordArgumentsError < StandardError; end
 
@@ -9,19 +7,20 @@ class BaseAction
 
   attr_reader :args, :data
 
-  def initialize(**args)
-    raise NonKeywordArgumentsError if args.present? && !args.is_a?(Hash)
+  def initialize(*args, &block)
+    raise NonKeywordArgumentsError if args.present? && !args[0].is_a?(Hash)
 
-    @args = @data = args
-
+    @args = @data = args[0]
     @args.each do |name, value|
       instance_variable_set("@#{name}", value)
     end
 
-    yield if block_given?
+    block.call if block_given?
   end
 
   def call; end
+
+  private
 
   def response(status, *args)
     BaseResponse.new(status, *args)

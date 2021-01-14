@@ -1,7 +1,8 @@
 h1 Article#show
 | Title: #{@article.title}
 br
-| Content: #{ @article.content }
+| Content:
+==@article.content
 br
 = image_tag @article.cover_image, width: 300 if @article.cover_image.attached?
 br
@@ -9,8 +10,9 @@ br
 p
   | Comments: #{@article.comments.count}
 
-- @article.comments.each do |c|
+- @article.comments.each do |comment|
   p
-    = c.commentable.email
+    = comment.commentable.email
     br
-    = c.content
+    == comment.content
+= link_to 'Edit', edit_article_path(@article)

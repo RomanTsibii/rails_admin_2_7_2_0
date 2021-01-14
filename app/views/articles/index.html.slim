@@ -1,0 +1,10 @@
+h1 Article#index
+p Find me in app/views/articles/index.html.slim
+- @articles.each do |a|
+  = link_to a.id, article_path(a)
+  br
+  = a.title if a.title.present?
+  br
+  == a.content if a.content.present?
+  br
+  = image_tag a.cover_image, width: 600 if a.cover_image.present?

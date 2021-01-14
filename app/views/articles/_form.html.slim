@@ -1,0 +1,12 @@
+= form_with model: article, url: form_url do |f|
+  = f.label :title
+  br
+  = f.text_area :title
+  br
+  = f.label :content
+  = f.rich_text_area :content
+  = f.label :cover_image
+  br
+  = f.file_field :cover_image
+  br
+  = f.submit
