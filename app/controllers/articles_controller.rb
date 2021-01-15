@@ -28,7 +28,7 @@ class ArticlesController < ResourcesController
   end
 
   def update
-    res = Articles::Operations::Update.call(record: @record, record_params: record_params)
+    res = Articles::Operations::Update.call(record: record, record_params: record_params)
     if res.ok?
       flash[:success] = MessageHelper.created(record_class.name)
       redirect_to articles_path
