@@ -1,6 +1,6 @@
 class ArticlesController < ResourcesController
   def index
-    @articles = Article.all
+    @articles = Article.order(:id)
   end
 
   def show
@@ -36,6 +36,16 @@ class ArticlesController < ResourcesController
       flash[:alert] = res.errors # html_humanize_errors(res.errors)
       redirect_to edit_article_path
     end
+  end
+
+  def destroy
+    res = Articles::Operations::Destroy.call(record: record)
+    if res.no_content?
+      flash[:success] = MessageHelper.destroyed(record_class.name)
+    else
+      flash[:alert] = res.error
+    end
+    redirect_to articles_path
   end
 
   private

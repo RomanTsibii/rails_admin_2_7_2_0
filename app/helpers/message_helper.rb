@@ -21,6 +21,10 @@ module MessageHelper
     action(resource, 'saved')
   end
 
+  def destroyed(resource = 'Data')
+    action(resource, 'destroyed')
+  end
+
   def action(resource = 'Data', action = 'saved')
     "#{resource} successfully #{action}"
   end
