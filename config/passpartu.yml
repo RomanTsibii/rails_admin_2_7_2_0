@@ -1,0 +1,19 @@
+admin: &admin
+  article:
+    crud: true
+    index: true
+    show: true
+    create: true
+    new: true
+    edit: true
+    update: true
+    destroy: true
+member: &member
+  article:
+    index: true
+    show: true
+    create: false
+    new: false
+    edit: false
+    update: false
+    destroy: false

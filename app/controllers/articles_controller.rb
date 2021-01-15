@@ -1,4 +1,6 @@
 class ArticlesController < ResourcesController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @articles = Article.order(:id)
   end
@@ -30,7 +32,7 @@ class ArticlesController < ResourcesController
   def update
     res = Articles::Operations::Update.call(record: record, record_params: record_params)
     if res.ok?
-      flash[:success] = MessageHelper.created(record_class.name)
+      flash[:success] = MessageHelper.updated(record_class.name)
       redirect_to articles_path
     else
       flash[:alert] = res.errors # html_humanize_errors(res.errors)
