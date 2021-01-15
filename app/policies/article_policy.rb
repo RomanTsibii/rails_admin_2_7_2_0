@@ -12,7 +12,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    user.can?(:article)
+    user.can?(:article, :create)
   end
 
   def edit?
