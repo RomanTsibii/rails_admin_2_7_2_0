@@ -8,6 +8,8 @@ admin: &admin
     edit: true
     update: true
     destroy: true
+  comment:
+    create: true
 member: &member
   article:
     index: true
@@ -17,3 +19,5 @@ member: &member
     edit: false
     update: false
     destroy: false
+  comment:
+    create: true

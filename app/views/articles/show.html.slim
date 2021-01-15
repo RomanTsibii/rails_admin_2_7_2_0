@@ -15,5 +15,11 @@ p
     = comment.commentable.email
     br
     == comment.content
+= form_with model: Comment.new, url: article_comment_path(@article) do |f|
+  = f.label :content
+  = f.rich_text_area :content
+  br
+  = f.submit
+
 = link_to 'Edit', edit_article_path(@article)
 = link_to 'Destroy', article_path(@article), method: :delete, data: { confirm: 'Are you sure?'}
