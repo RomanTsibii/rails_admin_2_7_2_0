@@ -1,16 +1,15 @@
 class CommentsController < ResourcesController
   def create
-    article = Article.find(params[:article_id].to_i)
-    if Comment.create(commentable: current_user,content: record_params[:content], article: article)
+    article = Article.find(params[:article_id])
+    res = Comments::Operations::Create.call(
+      record_params: record_params.merge!(commentable: current_user, article: article)
+    )
+    if res.created?
       flash[:success] = MessageHelper.created(record_class.name)
     else
-      flash[:warning] = 'Error'
+      flash[:alert] = res.errors
     end
     redirect_to article_path(article)
-    # res = Commets::Operations::Create.call(user: current_user, record_params: record_params)
-    # byebug
-    # p ''
-
   end
 
   private

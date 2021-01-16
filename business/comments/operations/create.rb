@@ -1,6 +1,5 @@
-class Commets::Operations::Create < BaseOperation
+class Comments::Operations::Create < BaseOperation
   def call
-    byebug
     build_record
     build_form
     return validation_fail(:bad_request) unless form_valid?
