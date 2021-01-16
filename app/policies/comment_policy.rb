@@ -6,4 +6,8 @@ class CommentPolicy < ApplicationPolicy
   def update?
     user.can?(:comment, :update)
   end
+
+  def destroy?
+    user.can?(:comment, :destroy)
+  end
 end

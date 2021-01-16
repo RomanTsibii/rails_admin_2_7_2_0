@@ -11,6 +11,7 @@ admin: &admin
   comment:
     create: true
     update: true
+    destroy: true
 member: &member
   article:
     index: true
@@ -23,3 +24,4 @@ member: &member
   comment:
     create: true
     update: true
+    destroy: true
