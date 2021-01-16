@@ -7,7 +7,7 @@ br
 = image_tag @article.cover_image, width: 300 if @article.cover_image.attached?
 br
 
-p
+h2
   | Comments: #{@article.comments.count}
 
 - @article.comments.each do |comment|
