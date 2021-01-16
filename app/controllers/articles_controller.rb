@@ -7,6 +7,8 @@ class ArticlesController < ResourcesController
 
   def show
     @article = record_class.find(params[:id])
+    @comments = @article.comments.order(:id)
+    @comment = Comment.new
     # UserMailer.welcome_email(current_user).deliver_later if current_user.present?
   end
 
