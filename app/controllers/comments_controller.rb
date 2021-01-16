@@ -19,6 +19,16 @@ class CommentsController < ResourcesController
     redirect_back(fallback_location: root_path)
   end
 
+  def destroy
+    res = Comments::Operations::Destroy.call(record: record)
+    if res.no_content?
+      flash[:success] = MessageHelper.destroyed(record_class.name)
+    else
+      flash[:notice] = res.errors
+    end
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def record_class
