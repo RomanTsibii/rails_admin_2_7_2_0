@@ -10,6 +10,7 @@ admin: &admin
     destroy: true
   comment:
     create: true
+    update: true
 member: &member
   article:
     index: true
@@ -21,3 +22,4 @@ member: &member
     destroy: false
   comment:
     create: true
+    update: true
