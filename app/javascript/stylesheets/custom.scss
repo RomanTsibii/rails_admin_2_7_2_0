@@ -24,10 +24,3 @@ $sides: (top, bottom, left, right);
     margin-bottom: #{$space}px !important;
   }
 }
-
-.visible {
-  visibility: visible;
-}
-.invisible {
-  display: none;
-}
