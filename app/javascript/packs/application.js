@@ -20,3 +20,6 @@ require("trix")
 require("@rails/actiontext")
 import "controllers"
 import "../trix-editor-overrides"
+
+import 'jquery'
+import('../src/plugins')

@@ -1,15 +1,16 @@
-- if notice.present?
-  p class="alert alert-primary"
-    = notice
-- if alert.present?
-  p class="alert alert-dark"
-    = alert
-- if flash[:danger].present?
-  p class="alert alert-danger"
-    = flash[:danger]
-- if flash[:success].present?
-  p class="alert alert-success"
-    = flash[:success]
-- if flash[:warning].present?
-  p class="alert alert-warning"
-    = flash[:warning]
+.container
+  - if notice.present?
+    p class="alert alert-primary"
+      = notice
+  - if alert.present?
+    p class="alert alert-dark"
+      = alert
+  - if flash[:danger].present?
+    p class="alert alert-danger"
+      = flash[:danger]
+  - if flash[:success].present?
+    p class="alert alert-success"
+      = flash[:success]
+  - if flash[:warning].present?
+    p class="alert alert-warning"
+      = flash[:warning]
