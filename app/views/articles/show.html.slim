@@ -1,37 +1,39 @@
-h1 Article#show
-| Title: #{@article.title}
-br
-| Content:
-==@article.content
-br
-= image_tag @article.cover_image, width: 300 if @article.cover_image.attached?
-br
+.container
+  .card
+    .card-body
+      h1 Title: #{@article.title}
+      = image_tag @article.cover_image, width: 300, class: "bd-placeholder-img rounded" if @article.cover_image.attached?
+      h2 Content:
+      ==@article.content
+      h3 Comments: #{@article.comments.count}
 
-h2
-  | Comments: #{@article.comments.count}
-
-- @comments.each do |comment|
-  p
-    = comment.commentable.email
-    br
-    == comment.content
-    .m-l-50
-      - if current_user.present? && current_user == comment.commentable # Edit comment
-        h4 Edit
-        h4
-          = link_to 'Destroy', article_comment_path(@article, comment), method: :delete
-        = form_with model: [@article, comment] do |form|
-          = form.label :content
-          = form.rich_text_area :content
-          = form.submit
-- if current_user.present?
-  = form_with model: [@article, @comment] do |f|
-    = f.label :content
-    = f.rich_text_area :content
-    br
-    = f.submit
-- else
-  p To be able to leave comments you need log in
-
-= link_to 'Edit', edit_article_path(@article)
-= link_to 'Destroy', article_path(@article), method: :delete, data: { confirm: 'Are you sure?'}
+      - @comments.each do |comment|
+        p
+          .border.rounded.p-3
+            = comment.commentable.email
+            br
+            == comment.content
+            - if current_user.present? && current_user == comment.commentable # Edit comment
+              button.btn.btn-outline-dark.mr-2 id="EditComment#{comment.id}" type="button" Edit Comment
+              = link_to 'Delete', article_comment_path(@article, comment), method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' }
+              = form_with model: [@article, comment], html: { id: "Comment#{comment.id}", style: 'display: none' } do |form|
+                = form.label :content, 'Edit comment'
+                = form.rich_text_area :content
+                = form.submit
+                javascript:
+                    $(document).ready(function () {
+                        $("#EditComment#{comment.id}").click(function () {
+                            console.log("click")
+                            $("#Comment#{comment.id}").toggle('show');
+                        });
+                    });
+      - if current_user.present?
+        = form_with model: [@article, @comment] do |f|
+          = f.label :content, 'Create new comment:'
+          = f.rich_text_area :content
+          br
+          = f.submit class: 'btn btn-outline-success mb-2'
+      - else
+        p To be able to leave comments you need log in
+      = link_to 'Edit Article', edit_article_path(@article), class: 'btn btn-outline-dark mr-2'
+      = link_to 'Destroy', article_path(@article), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-danger'
