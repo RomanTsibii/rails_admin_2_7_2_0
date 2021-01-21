@@ -4,7 +4,7 @@ class CommentsController < ResourcesController
     if res.created?
       flash[:success] = MessageHelper.created(record_class.name)
     else
-      flash[:alert] = res.errors
+      flash[:danger] = res.errors
     end
     redirect_back(fallback_location: root_path)
   end
@@ -14,7 +14,7 @@ class CommentsController < ResourcesController
     if res.ok?
       flash[:success] = MessageHelper.updated(record_class.name)
     else
-      flash[:alert] = res.errors
+      flash[:danger] = res.errors
     end
     redirect_back(fallback_location: root_path)
   end
@@ -24,7 +24,7 @@ class CommentsController < ResourcesController
     if res.no_content?
       flash[:success] = MessageHelper.destroyed(record_class.name)
     else
-      flash[:notice] = res.errors
+      flash[:danger] = res.errors
     end
     redirect_back(fallback_location: root_path)
   end
