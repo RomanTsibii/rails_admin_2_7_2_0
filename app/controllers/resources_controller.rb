@@ -22,7 +22,7 @@ class ResourcesController < ApplicationController
 
     redirect_back(fallback_location: root_path)
     # flash[:warning] = t "#{policy_name}.#{exception.query}", scope: :pundit, default: :default
-    flash[:warning] = 'You cannot perform this action'
+    flash[:danger] = 'You cannot perform this action'
   end
 
   def policy_class

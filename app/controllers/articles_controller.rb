@@ -22,7 +22,7 @@ class ArticlesController < ResourcesController
       flash[:success] = MessageHelper.created(record_class.name)
       redirect_to articles_path
     else
-      flash[:alert] = res.errors # html_humanize_errors(res.errors)
+      flash[:danger] = res.errors # html_humanize_errors(res.errors)
       redirect_to new_article_path
     end
   end
@@ -37,7 +37,7 @@ class ArticlesController < ResourcesController
       flash[:success] = MessageHelper.updated(record_class.name)
       redirect_to articles_path
     else
-      flash[:alert] = res.errors # html_humanize_errors(res.errors)
+      flash[:danger] = res.errors # html_humanize_errors(res.errors)
       redirect_to edit_article_path
     end
   end
@@ -47,7 +47,7 @@ class ArticlesController < ResourcesController
     if res.no_content?
       flash[:success] = MessageHelper.destroyed(record_class.name)
     else
-      flash[:alert] = res.error
+      flash[:danger] = res.error
     end
     redirect_to articles_path
   end
