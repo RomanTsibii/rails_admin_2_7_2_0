@@ -19,7 +19,7 @@
               = form_with model: [@article, comment], html: { id: "Comment#{comment.id}", style: 'display: none' } do |form|
                 = form.label :content, 'Edit comment'
                 = form.rich_text_area :content
-                = form.submit
+                = form.submit class: 'btn btn-outline-success mt-2'
                 javascript:
                     $(document).ready(function () {
                         $("#EditComment#{comment.id}").click(function () {
