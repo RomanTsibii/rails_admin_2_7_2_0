@@ -1,5 +1,7 @@
 class ArticlesController < ResourcesController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show view_modal]
+
+  respond_to :js, only: :view_modal
 
   def index
     @articles = Article.order(:id)
@@ -50,6 +52,13 @@ class ArticlesController < ResourcesController
       flash[:danger] = res.error
     end
     redirect_to articles_path
+  end
+
+  def view_modal
+    @article = Article.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'view_modal_js', article: @article }
+    end
   end
 
   private

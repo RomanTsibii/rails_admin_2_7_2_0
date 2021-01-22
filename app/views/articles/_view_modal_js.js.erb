@@ -1,0 +1,5 @@
+$("body").append("<%= escape_javascript(render(partial: "view_modal", article: @article))%>");
+$("#view_modal").modal('show');
+$('#view_modal').on('hidden.bs.modal', function () {
+    $('#view_modal').remove();
+});
