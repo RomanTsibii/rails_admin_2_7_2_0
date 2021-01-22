@@ -26,4 +26,8 @@ class ArticlePolicy < ApplicationPolicy
   def destroy?
     user.can?(:article, :destroy)
   end
+
+  def view_modal?
+    true
+  end
 end

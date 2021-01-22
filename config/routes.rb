@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :articles do
     resources :comments, only: %i[create update destroy]
+    get :view_modal, on: :member
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
