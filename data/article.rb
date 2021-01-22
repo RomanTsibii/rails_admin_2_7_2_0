@@ -5,4 +5,7 @@ class Article < ApplicationRecord
   has_rich_text :content
 
   # validates :content, :title,  presence: true
+  def count_comments
+    comments.count
+  end
 end

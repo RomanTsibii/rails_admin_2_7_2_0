@@ -1,7 +1,5 @@
 RailsAdmin.config do |config|
 
-  ### Popular gems integration
-
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -11,6 +9,59 @@ RailsAdmin.config do |config|
   config.authorize_with do
     redirect_to main_app.root_path unless current_user.admin?
   end
+
+  config.model 'ActiveStorage::Blob' do
+    visible false
+  end
+
+  config.model 'ActiveStorage::Attachment' do
+    visible false
+  end
+
+  config.model 'ActionText::RichText' do
+    visible false
+  end
+
+  config.model 'Article' do
+    list do
+      field :id
+      field :title
+      field :created_at
+      field :count_comments
+      field :cover_image
+    end
+
+    create do
+      field :title
+      field :content
+      field :cover_image
+    end
+    update do
+      field :title
+      field :content
+      field :cover_image
+    end
+  end
+
+  config.model 'User' do
+    create do
+      field :first_name
+      field :last_name
+      field :phone_number
+      field :role do
+        required true
+      end
+      field :email do
+        required true
+      end
+      field :password do
+        required true
+      end
+
+
+    end
+  end
+
 
   ## == CancanCan ==
   # config.authorize_with :cancancan
