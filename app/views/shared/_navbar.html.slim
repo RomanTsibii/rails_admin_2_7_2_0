@@ -1,22 +1,23 @@
 nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mb-3
   .container
-    = link_to 'Rails project', root_path, class: "navbar-brand"
-    button.navbar-toggler aria-controls="navbarsExample03" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarsExample03" data-toggle="collapse" type="button"
-      span.navbar-toggler-icon
-    #navbarsExample03.collapse.navbar-collapse
+    = link_to t('global.menu.name_project'), root_path, class: "navbar-brand"
+    .collapse.navbar-collapse
       ul.navbar-nav.mr-auto
         li.nav-item.active
-          = link_to 'ADMIN', rails_admin_path, class: "nav-link" if current_user.present? && current_user.admin?
-            span.sr-only (current)
+          = link_to 'UK', root_path(locale: :uk), class: "nav-link"
+        li.nav-item.active
+          = link_to 'EN', root_path(locale: :en), class: "nav-link"
+        li.nav-item.active
+          = link_to t('global.menu.administrate'), rails_admin_path, class: "nav-link" if current_user.present? && current_user.admin?
       form.form-inline.my-2.my-md-0
         ul.navbar-nav.mr-auto
           li.nav-item.active
-            =link_to 'Articles', articles_path, class: "nav-link"
+            = link_to t('global.menu.articles'), articles_path, class: "nav-link"
           - if current_user.present?
             li.nav-item.active
-              = link_to 'New Article', new_article_path, class: "nav-link" if current_user.admin?
+              = link_to t('global.menu.create_article'), new_article_path, class: "nav-link" if current_user.admin?
             li.nav-item.active
-              = link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-light"
+              = link_to t('global.menu.sing_out'), destroy_user_session_path, method: :delete, class: "btn btn-outline-light"
           - else
             li.nav-item.active
-              = link_to 'Login', new_user_session_path, class: "btn btn-outline-light"
+              = link_to t('global.menu.sing_in'), new_user_session_path, class: "btn btn-outline-light"

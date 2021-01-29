@@ -1,0 +1,55 @@
+uk:
+  activerecord:
+    models:
+      comment:
+        one: Коментар
+        other: Коментарі
+      article:
+        one: Стаття
+        other: Статті
+      user:
+        one: Користувач
+        other: Користувачі
+    attributes:
+      article:
+        count_comments: Кількість коментарів
+        title: Заголовок
+        content: Вміст
+        cover_image: Зображення обкладинки
+        id: ІД
+        translations:
+          one: Переклади
+
+      user:
+        first_name: Ім'я
+        last_name: Прізвище
+        phone_number: Номер телефону
+        role:
+          one: Роль
+          other:
+            admin: Адмін
+            member: Учасник
+      comment:
+        article: Стаття
+        commentable: Коментатор
+        сontent: Вміст
+  admin:
+    actions:
+      index:
+        title: Користувачі
+  global:
+    menu:
+      administrate: Адміністрація
+      name_project: Rails Адмінка
+      articles: Статті
+      create_article: Створити статтю
+      sing_in: Увійти
+      sing_out: Вийти
+  articles:
+    index:
+      name: Статті
+      edit: Змінити
+      show: Переглянути
+      view: Огляд
+    new:
+      new: Створення нової статті

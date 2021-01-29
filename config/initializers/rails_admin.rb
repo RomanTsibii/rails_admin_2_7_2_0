@@ -1,5 +1,8 @@
 RailsAdmin.config do |config|
 
+  ## == I18n ==
+  config.included_models = %w[Article Article::Translation User Comment]
+
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -10,19 +13,9 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless current_user.admin?
   end
 
-  config.model 'ActiveStorage::Blob' do
-    visible false
-  end
-
-  config.model 'ActiveStorage::Attachment' do
-    visible false
-  end
-
-  config.model 'ActionText::RichText' do
-    visible false
-  end
-
   config.model 'Article' do
+    configure :translations, :globalize_tabs
+
     list do
       field :id
       field :title
@@ -32,15 +25,25 @@ RailsAdmin.config do |config|
     end
 
     create do
-      field :title
-      field :content
+      field :translations
       field :cover_image
     end
+
     update do
-      field :title
-      field :content
+      field :translations
       field :cover_image
     end
+  end
+
+  config.model 'Article::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
+    end
+    field :title do
+      required true
+    end
+    include_fields :locale, :title, :content
   end
 
   config.model 'User' do
@@ -57,26 +60,23 @@ RailsAdmin.config do |config|
       field :password do
         required true
       end
+    end
 
-
+    update do
+      field :first_name
+      field :last_name
+      field :phone_number
+      field :role do
+        required true
+      end
+      field :email do
+        required true
+      end
+      field :password do
+        required true
+      end
     end
   end
-
-
-  ## == CancanCan ==
-  # config.authorize_with :cancancan
-
-  ## == Pundit ==
-  # config.authorize_with :pundit
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-
-  ## == Gravatar integration ==
-  ## To disable Gravatar integration in Navigation Bar set to false
-  # config.show_gravatar = true
 
   config.actions do
     dashboard                     # mandatory

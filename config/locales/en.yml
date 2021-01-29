@@ -1,33 +1,54 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      comment:
+        one: Comment
+        other: Comments
+      article:
+        one: article
+        other: articles
+      user:
+        one: user
+        other: users
+    attributes:
+      article:
+        count_comments: Count comments
+        title: Title
+        content: Content
+        cover_image: Cover image
+        id: ID
+      user:
+        first_name: First name
+        last_name: Last name
+        phone_number: Phone number
+        role:
+          one: role
+          other:
+            admin: admin
+            member: member
+      comment:
+        article: Стаття
+        commentable: Коментатор
+        сontent: Вміст
+  admin:
+    actions:
+      index:
+        title: Users
+  global:
+    menu:
+      administrate: Administrate
+      name_project: Rails Admin
+      articles: Articles
+      create_article: Create article
+      sing_in: Login
+      sing_out: Logout
+  articles:
+    index:
+      name: Articles
+      edit: Edit
+      show: Show
+      view: View
+    new:
+      new: Create new Article
+    _form:
+

@@ -1,4 +1,5 @@
-= form_with model: article, url: form_url do |f|
+/ - I18n.available_locales.each
+= form_with model: article, url: form_url, locale: :uk  do |f|
   = f.label :title
   br
   = f.text_area :title, class: "form-control"
