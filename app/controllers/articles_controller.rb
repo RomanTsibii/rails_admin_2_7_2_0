@@ -1,5 +1,6 @@
 class ArticlesController < ResourcesController
   skip_before_action :authenticate_user!, only: %i[index show view_modal]
+  before_action :set_locale_to_record, only: %i[create update]
 
   respond_to :js, only: :view_modal
 
@@ -69,5 +70,9 @@ class ArticlesController < ResourcesController
 
   def record_class
     Article
+  end
+
+  def set_locale_to_record
+    I18n.locale = record_params[:locale]
   end
 end

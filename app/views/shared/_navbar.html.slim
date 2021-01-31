@@ -4,9 +4,9 @@ nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mb-3
     .collapse.navbar-collapse
       ul.navbar-nav.mr-auto
         li.nav-item.active
-          = link_to 'UK', root_path(locale: :uk), class: "nav-link"
+          = link_to 'UK', { locale: :uk }, class: 'nav-link'
         li.nav-item.active
-          = link_to 'EN', root_path(locale: :en), class: "nav-link"
+          = link_to 'EN', { locale: :en }, class: 'nav-link'
         li.nav-item.active
           = link_to t('global.menu.administrate'), rails_admin_path, class: "nav-link" if current_user.present? && current_user.admin?
       form.form-inline.my-2.my-md-0

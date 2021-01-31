@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :set_locale
-  # before_action :default_url_options
+  before_action :default_url_options
 
   private
 
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
   end
 
-  def default_url_options
-    { locale: I18n.locale }
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
 end
