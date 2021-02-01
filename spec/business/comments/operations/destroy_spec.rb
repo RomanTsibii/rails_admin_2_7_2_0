@@ -13,6 +13,7 @@ describe Comments::Operations::Destroy do
         subject
 
         expect { comment.reload }.to raise_error ActiveRecord::RecordNotFound
+        expect(subject.status).to eq('no_content')
       end
     end
   end
