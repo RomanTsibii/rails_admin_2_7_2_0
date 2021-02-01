@@ -4,7 +4,6 @@ describe Articles::Operations::Create do
   subject { described_class.call(record_params: record_params) }
 
   describe '.call' do
-    # let(:record_params) { attributes_for(:article) }
     let(:record_params) { attributes_for(:article, :with_cover_image) }
 
     context 'with valid params' do

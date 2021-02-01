@@ -3,6 +3,8 @@ class Article < ApplicationRecord
 
   has_one_attached :cover_image
 
+  validates :title, :content, presence: true
+
   # I18n for admin globalize with action text
   translates :title, :content
   accepts_nested_attributes_for :translations, allow_destroy: true
