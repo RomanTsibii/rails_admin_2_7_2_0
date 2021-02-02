@@ -43,5 +43,18 @@ module RailsAdmin272
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Devise-jwt
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource(
+          '*',
+          headers: :any,
+          expose: ["Authorization"],
+          methods: [:get, :patch, :put, :delete, :post, :options, :show]
+        )
+      end
+    end
   end
 end
