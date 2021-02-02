@@ -6,37 +6,10 @@ The file contains important changes from version to version
 
 ### Added
 
-* React on FE
-
-### Fixed
-
-* Those annoying issue
-* Those JavaScript issue
-
 ### Deleted
 
-* jQuery from FE
+### Changed
 
 ### Commands to run
 
-* `$ migrate something`
-
-## \<version> - \<release date>
-
-### Added
-
-* `Client` model
-
-### Changed
-
-* Authorization from `JWT` to `JWT3000`
-
-## v0.1.1 - 01.05.1989
-
-### Added
-
-* Project structure
-
-### Changed
-
-* `BitBucket` -> `GitHub`
+* EDITOR=nano rails credentials:edit --environment development

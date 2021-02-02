@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     root 'articles#index'
     devise_for :users
     draw :articles
-    draw :api
   end
+  draw :api
 end

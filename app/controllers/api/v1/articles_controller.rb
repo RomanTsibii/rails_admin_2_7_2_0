@@ -3,9 +3,10 @@ class Api::V1::ArticlesController < ApiController
 
   def index
     articles = Article.all
-    respond_with do |format|
-      format.json { render json: articles.to_json }
-    end
+    render json: articles.to_json
+    # respond_with do |format|
+    #   format.json { render json: articles.to_json }
+    # end
   end
 
   def show
