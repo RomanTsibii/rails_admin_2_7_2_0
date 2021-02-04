@@ -4,6 +4,9 @@ namespace :api, defaults: { format: :json }do
       post 'auth/sign_in', to: 'sessions#create'
       delete 'auth/sign_out', to: 'sessions#destroy'
     end
-    resources :articles
+
+    resources :articles do
+      resources :comments, only: %i[create update destroy]
+    end
   end
 end

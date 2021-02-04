@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'blueprinter', '~> 0.25.2'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
 gem 'devise-jwt', '~> 0.8.0'

@@ -5,11 +5,11 @@ en:
         one: Comment
         other: Comments
       article:
-        one: article
-        other: articles
+        one: Article
+        other: Articles
       user:
-        one: user
-        other: users
+        one: User
+        other: Users
     attributes:
       article:
         count_comments: Count comments
@@ -27,13 +27,9 @@ en:
             admin: admin
             member: member
       comment:
-        article: Стаття
-        commentable: Коментатор
-        сontent: Вміст
-  admin:
-    actions:
-      index:
-        title: Users
+        article: Atricle
+        commentable: Commentable
+        сontent: Content
   global:
     menu:
       administrate: Administrate

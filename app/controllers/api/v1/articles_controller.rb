@@ -2,28 +2,38 @@ class Api::V1::ArticlesController < ApiController
   # skip_before_action :authenticate_user!, only: %i[index show create]
 
   def index
-    articles = Article.all
-    render json: articles.to_json
-    # respond_with do |format|
-    #   format.json { render json: articles.to_json }
-    # end
+    render json: ArticlesBlueprint.render(records), status: :ok
   end
 
   def show
-    article = Article.find(params[:id])
-    respond_with do |format|
-      format.json { render json: article.to_json }
-    end
+    render json: ArticlesBlueprint.render(
+      record,
+      view: :with_comments,
+      locale: I18n.locale
+    ), status: :ok
   end
 
-  # def create
-  #   res = Articles::Operations::Create(record_params: record_params)
-  #   respond_to.json { res.data.to_json }
-  # end
-  #
-  # private
-  #
-  # def record_params
-  #   params.require(:articles).permit!
-  # end
+  def create
+    res = Articles::Operations::Create.call(record_params: record_params)
+    render json: ArticlesBlueprint.render(res.data[:record], locale: I18n.locale), status: res.status.to_sym
+  end
+
+  def update
+    res = Articles::Operations::Update.call(record_params: record_params, record: record)
+    render json: ArticlesBlueprint.render(res.data[:record], locale: I18n.locale), status: res.status.to_sym
+  end
+
+  def destroy
+    render json: {}, status: Articles::Operations::Destroy.call(record: record).status.to_sym
+  end
+
+  private
+
+  def record_params
+    params.require(:article).permit!.merge!(article: params[:article_id])
+  end
+
+  def record_class
+    Article
+  end
 end
