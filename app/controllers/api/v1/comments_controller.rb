@@ -17,7 +17,6 @@ class Api::V1::CommentsController < ApiController
 
   def record_params
     article = Article.find(params[:article_id]) # TODO: set error if article not found
-    current_user = User.last # TODO: remove after create sing in
     params.require(:comment).permit!.merge!(commentable: current_user, article: article)
   end
 

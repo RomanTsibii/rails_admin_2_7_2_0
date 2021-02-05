@@ -1,5 +1,5 @@
 class Api::V1::ArticlesController < ApiController
-  # skip_before_action :authenticate_user!, only: %i[index show create]
+  skip_before_action :authenticate_request, only: %i[index show]
 
   def index
     render json: ArticlesBlueprint.render(records), status: :ok
@@ -15,7 +15,9 @@ class Api::V1::ArticlesController < ApiController
 
   def create
     res = Articles::Operations::Create.call(record_params: record_params)
-    render json: ArticlesBlueprint.render(res.data[:record], locale: I18n.locale), status: res.status.to_sym
+    return render json: ArticlesBlueprint.render(res.data[:record], locale: I18n.locale), status: res.status.to_sym if res.created?
+
+    render json: { error: res.data[:errors] }, status: res.status.to_sym
   end
 
   def update
