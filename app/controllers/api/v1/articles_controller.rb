@@ -26,7 +26,7 @@ class Api::V1::ArticlesController < ApiController
   end
 
   def destroy
-    render json: {}, status: Articles::Operations::Destroy.call(record: record).status.to_sym
+    head Articles::Operations::Destroy.call(record: record).status.to_sym
   end
 
   private
