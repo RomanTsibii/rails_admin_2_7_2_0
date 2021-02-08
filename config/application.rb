@@ -34,7 +34,6 @@ module RailsAdmin272
 
     # Localize
     config.i18n.available_locales = [:en, :uk]
-    config.i18n.fallbacks = {:ua => [:uk]}
     config.i18n.default_locale = :en
 
     # Settings in config/environments/* take precedence over those specified here.

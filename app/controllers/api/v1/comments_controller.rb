@@ -10,7 +10,7 @@ class Api::V1::CommentsController < ApiController
   end
 
   def destroy
-    render json: {}, status: Comments::Operations::Destroy.call(record: record).status.to_sym
+    head Comments::Operations::Destroy.call(record: record).status.to_sym
   end
 
   private

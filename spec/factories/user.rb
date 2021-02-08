@@ -3,6 +3,7 @@ FactoryBot.define do
     password ||= 'password'
     email { 'roman.ts@coaxsoft.com' }
     password { password }
+    password_confirmation { password }
     factory :member do
       role { 'member' }
     end
