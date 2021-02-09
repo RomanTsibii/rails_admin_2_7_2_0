@@ -33,10 +33,6 @@ uk:
         article: Стаття
         commentable: Коментатор
         сontent: Вміст
-  admin:
-    actions:
-      index:
-        title: Користувачі
   global:
     menu:
       administrate: Адміністрація

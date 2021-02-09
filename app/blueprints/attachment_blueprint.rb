@@ -1,4 +1,4 @@
 class AttachmentBlueprint < Blueprinter::Base
   identifier :service_url
-  # fields :service_url, :filename, :content_type
+  fields :content_type, :byte_size
 end
