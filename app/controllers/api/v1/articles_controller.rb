@@ -22,7 +22,9 @@ class Api::V1::ArticlesController < ApiController
 
   def update
     res = Articles::Operations::Update.call(record_params: record_params, record: record)
-    render json: ArticlesBlueprint.render(res.data[:record], locale: I18n.locale), status: res.status.to_sym
+    return render json: ArticlesBlueprint.render(res.data[:record], locale: I18n.locale), status: res.status.to_sym if res.ok?
+
+    render json: { error: res.data[:errors] }, status: res.status.to_sym
   end
 
   def destroy
@@ -32,7 +34,7 @@ class Api::V1::ArticlesController < ApiController
   private
 
   def record_params
-    params.require(:article).permit!.merge!(article: params[:article_id])
+    params.require(:article).permit!
   end
 
   def record_class
