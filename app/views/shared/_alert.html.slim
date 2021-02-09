@@ -7,7 +7,9 @@
       = alert
   - if flash[:danger].present?
     p class="alert alert-danger"
-      = flash[:danger]
+      - flash[:danger].each do |name, massage|
+        | #{name.capitalize}: #{massage.first}
+        br
   - if flash[:success].present?
     p class="alert alert-success"
       = flash[:success]
