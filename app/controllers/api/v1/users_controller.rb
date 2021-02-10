@@ -1,5 +1,7 @@
 class Api::V1::UsersController < ApiController
   skip_before_action :authenticate_request
+  skip_before_action :verify_class
+  skip_before_action :verify_record
 
   def log_in
     @res = Api::AuthenticateUser.call(params[:user][:email], params[:user][:password])

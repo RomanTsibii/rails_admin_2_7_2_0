@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   has_one_attached :cover_image
 
   validates :title, :content, presence: true
-  validates :cover_image, content_type:['image/png', 'image/jpg', 'image/jpeg']
+  validates :cover_image, content_type: %w(image/png image/jpg image/jpeg)
 
   # I18n for admin globalize with action text
   translates :title, :content
