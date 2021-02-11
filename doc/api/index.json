@@ -1,0 +1,72 @@
+{
+  "resources": [
+    {
+      "name": "Articles",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "DELETE article",
+          "link": "articles/delete_article.json",
+          "groups": "all",
+          "route": "api/v1/articles/:id",
+          "method": "delete"
+        },
+        {
+          "description": "GET Articles",
+          "link": "articles/get_articles.json",
+          "groups": "all",
+          "route": "/api/v1/articles",
+          "method": "get"
+        },
+        {
+          "description": "GET article",
+          "link": "articles/get_article.json",
+          "groups": "all",
+          "route": "/api/v1/articles/:id",
+          "method": "get"
+        },
+        {
+          "description": "POST article",
+          "link": "articles/post_article.json",
+          "groups": "all",
+          "route": "/api/v1/articles",
+          "method": "post"
+        },
+        {
+          "description": "PUT article",
+          "link": "articles/put_article.json",
+          "groups": "all",
+          "route": "/api/v1/articles/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "DELETE session",
+          "link": "user/delete_session.json",
+          "groups": "all",
+          "route": "api/v1/user/log_out",
+          "method": "delete"
+        },
+        {
+          "description": "POST log_in",
+          "link": "user/post_log_in.json",
+          "groups": "all",
+          "route": "api/v1/user/log_in",
+          "method": "post"
+        },
+        {
+          "description": "POST registration(log_up)",
+          "link": "user/post_registration(log_up).json",
+          "groups": "all",
+          "route": "/api/v1/user/log_up",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}

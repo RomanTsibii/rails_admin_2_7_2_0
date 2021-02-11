@@ -95,3 +95,11 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+RspecApiDocumentation.configure do |config|
+  # An array of output format(s).
+  # Possible values are :json, :html, :combined_text, :combined_json,
+  #   :json_iodocs, :textile, :markdown, :append_json, :slate,
+  #   :api_blueprint, :open_api
+  config.format = [:json]
+end

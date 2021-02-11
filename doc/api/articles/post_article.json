@@ -1,0 +1,68 @@
+{
+  "resource": "Articles",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/v1/articles",
+  "description": "POST article",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "article",
+      "require": true,
+      "type": "string",
+      "name": "title",
+      "description": "Article title"
+    },
+    {
+      "scope": "article",
+      "require": true,
+      "type": "string",
+      "name": "content",
+      "description": "action text"
+    },
+    {
+      "scope": "article",
+      "type": "file",
+      "name": "cover_image",
+      "description": "Only image[png, jpeg, jpg]"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/articles",
+      "request_body": "{\"article\":{\"title\":\"Article title\",\"content\":{\"id\":null,\"name\":\"content\",\"body\":\"Action text: content\",\"record_type\":\"Article::Translation\",\"record_id\":null,\"created_at\":null,\"updated_at\":null}}}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MTMxNTAzNTZ9.Ne-vEEauJD3NWwYU5YmKu3CYHliqoPkyIHp7UtXwj3o",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 2,\n  \"title\": \"Article title\",\n  \"content\": \"<div class=\\\"trix-content\\\">\\n  {\\\"id\\\"=&gt;nil, \\\"name\\\"=&gt;\\\"content\\\", \\\"body\\\"=&gt;\\\"Action text: content\\\", \\\"record_type\\\"=&gt;\\\"Article::Translation\\\", \\\"record_id\\\"=&gt;nil, \\\"created_at\\\"=&gt;nil, \\\"updated_at\\\"=&gt;nil}\\n</div>\\n\",\n  \"locale\": \"en\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"fb4b5d95b0164417f1941fbcc6eb25ee\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "0971cea0-e941-4a01-805b-d2d6b2eeed89",
+        "X-Runtime": "0.038774",
+        "Content-Length": "299"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

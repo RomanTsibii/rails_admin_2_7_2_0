@@ -124,6 +124,7 @@ The file contains important changes from version to version
 
 ### Commands to run
 
+* rake docs:generate
 * EDITOR=nano rails credentials:edit --environment development 
 * RAILS_ENV=production bundle exec rake webpacker:compile
 * RAILS_ENV=production bundle exec rake assets:precompile

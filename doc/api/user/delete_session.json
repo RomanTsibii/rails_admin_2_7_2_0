@@ -1,0 +1,47 @@
+{
+  "resource": "User",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/user/log_out",
+  "description": "DELETE session",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/user/log_out",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": null,
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "805fe1c0-c8e5-4943-8e70-54daa5e6fd86",
+        "X-Runtime": "0.019355",
+        "Content-Length": "0"
+      },
+      "response_content_type": "application/json",
+      "curl": null
+    }
+  ]
+}

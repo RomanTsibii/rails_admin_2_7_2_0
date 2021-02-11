@@ -1,0 +1,80 @@
+{
+  "resource": "User",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/v1/user/log_up",
+  "description": "POST registration(log_up)",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "user",
+      "require": true,
+      "name": "email",
+      "description": "unique email"
+    },
+    {
+      "scope": "user",
+      "require": true,
+      "name": "password",
+      "description": "password"
+    },
+    {
+      "scope": "user",
+      "require": true,
+      "name": "password_confirmation",
+      "description": "confirm password"
+    },
+    {
+      "scope": "user",
+      "name": "first_name",
+      "description": "string"
+    },
+    {
+      "scope": "user",
+      "name": "last_name",
+      "description": "string"
+    },
+    {
+      "scope": "user",
+      "name": "phone_number",
+      "description": "string"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/user/log_up",
+      "request_body": "{\"user\":{\"email\":\"susan@pouros.com\",\"password\":\"password\",\"password_confirmation\":\"password\",\"phone_number\":\"+995 231-119-2744 x826\",\"first_name\":\"Jacquline\",\"last_name\":\"Conn\"}}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 5,\n  \"email\": \"susan@pouros.com\",\n  \"role\": \"member\",\n  \"first_name\": \"Jacquline\",\n  \"last_name\": \"Conn\",\n  \"phone_number\": \"+995 231-119-2744 x826\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"27e5a01fff8486b4bf1eab4e3137e3c4\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9c3e4467-fd44-41b9-af83-eecc941d086f",
+        "X-Runtime": "0.028885",
+        "Content-Length": "135"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
