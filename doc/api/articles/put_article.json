@@ -1,0 +1,66 @@
+{
+  "resource": "Articles",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/api/v1/articles/:id",
+  "description": "PUT article",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "article",
+      "type": "string",
+      "name": "title",
+      "description": "Article title"
+    },
+    {
+      "scope": "article",
+      "type": "string",
+      "name": "content",
+      "description": "action text"
+    },
+    {
+      "scope": "article",
+      "type": "file",
+      "name": "cover_image",
+      "description": "Only image[png, jpeg, jpg]"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/articles/3",
+      "request_body": "{\"article\":{\"title\":\"Article title\",\"content\":{\"id\":3,\"name\":\"content\",\"body\":\"Action text: content\",\"record_type\":\"Article::Translation\",\"record_id\":3,\"created_at\":\"2021-02-11T17:19:16.257Z\",\"updated_at\":\"2021-02-11T17:19:16.257Z\"}}}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MTMxNTAzNTZ9.cp6pZRCrAUZV0oBXwsr8499GnpiEhgeHBob4KMBtLY4",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 3,\n  \"title\": \"Article title\",\n  \"content\": \"<div class=\\\"trix-content\\\">\\n  {\\\"id\\\"=&gt;3, \\\"name\\\"=&gt;\\\"content\\\", \\\"body\\\"=&gt;\\\"Action text: content\\\", \\\"record_type\\\"=&gt;\\\"Article::Translation\\\", \\\"record_id\\\"=&gt;3, \\\"created_at\\\"=&gt;\\\"2021-02-11T17:19:16.257Z\\\", \\\"updated_at\\\"=&gt;\\\"2021-02-11T17:19:16.257Z\\\"}\\n</div>\\n\",\n  \"locale\": \"en\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"35d72add6b9e2fb70dec9e65ce1fb626\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "6f920cd5-a617-4334-878a-ad52ca92628d",
+        "X-Runtime": "0.048260",
+        "Content-Length": "345"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "resource": "Articles",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/articles/:id",
+  "description": "DELETE article",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/articles/4",
+      "request_body": "{}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MTMxNTAzNTZ9.0YOrJynDfc5l8whjyHarcwveffrxKbbNItoLOq2jFzk",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "86370a29-0db4-4cd4-97a9-7f5fb55cda5c",
+        "X-Runtime": "0.028900"
+      },
+      "response_content_type": null,
+      "curl": null
+    }
+  ]
+}

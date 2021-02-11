@@ -1,0 +1,59 @@
+{
+  "resource": "User",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/user/log_in",
+  "description": "POST log_in",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "user",
+      "require": true,
+      "name": "email",
+      "description": "User email"
+    },
+    {
+      "scope": "user",
+      "require": true,
+      "name": "password",
+      "description": "User password"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/user/log_in",
+      "request_body": "{\"user\":{\"email\":\"craig@rowe.io\",\"password\":\"password\"}}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 6,\n  \"email\": \"craig@rowe.io\",\n  \"role\": \"member\",\n  \"jwt_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MTMxNTAzNTZ9.OgkaR629v2mUj7YxI6HnD9d-15pDaI6qBi1RTygzRbk\",\n  \"expired_at\": \"2021-02-12 19:19:16 +0200\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"cc9714b53c476a3ed2d1f21b8ac9afb7\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "93e0679a-2c56-40d0-a93f-a445e14614b8",
+        "X-Runtime": "0.025611",
+        "Content-Length": "209"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
