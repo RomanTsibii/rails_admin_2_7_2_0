@@ -18,7 +18,7 @@
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MTMxNTAzNTZ9.0YOrJynDfc5l8whjyHarcwveffrxKbbNItoLOq2jFzk",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MTMyMDg4MDF9.Ea8ZqQeiIfNZJYNKF27E28600wmuyEBv6CkT-yCc2zY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -36,8 +36,8 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "86370a29-0db4-4cd4-97a9-7f5fb55cda5c",
-        "X-Runtime": "0.028900"
+        "X-Request-Id": "1c0aae59-b20d-48f2-9c46-d493573f64f8",
+        "X-Runtime": "0.032383"
       },
       "response_content_type": null,
       "curl": null

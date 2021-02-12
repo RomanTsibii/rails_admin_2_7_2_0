@@ -47,7 +47,7 @@
     {
       "request_method": "POST",
       "request_path": "/api/v1/user/log_up",
-      "request_body": "{\"user\":{\"email\":\"susan@pouros.com\",\"password\":\"password\",\"password_confirmation\":\"password\",\"phone_number\":\"+995 231-119-2744 x826\",\"first_name\":\"Jacquline\",\"last_name\":\"Conn\"}}",
+      "request_body": "{\"user\":{\"email\":\"thomasina@homenick.name\",\"password\":\"password\",\"password_confirmation\":\"password\",\"phone_number\":\"+263 266-280-2557 x3860\",\"first_name\":\"Norman\",\"last_name\":\"Littel\"}}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
@@ -58,7 +58,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"id\": 5,\n  \"email\": \"susan@pouros.com\",\n  \"role\": \"member\",\n  \"first_name\": \"Jacquline\",\n  \"last_name\": \"Conn\",\n  \"phone_number\": \"+995 231-119-2744 x826\"\n}",
+      "response_body": "{\n  \"id\": 5,\n  \"email\": \"thomasina@homenick.name\",\n  \"role\": \"member\",\n  \"first_name\": \"Norman\",\n  \"last_name\": \"Littel\",\n  \"phone_number\": \"+263 266-280-2557 x3860\"\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -67,11 +67,11 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"27e5a01fff8486b4bf1eab4e3137e3c4\"",
+        "ETag": "W/\"01eadd122de65fa2f27b218ffc2d732e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9c3e4467-fd44-41b9-af83-eecc941d086f",
-        "X-Runtime": "0.028885",
-        "Content-Length": "135"
+        "X-Request-Id": "961e7d27-ded8-43e9-8808-c47b04cb94d6",
+        "X-Runtime": "0.031807",
+        "Content-Length": "142"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
