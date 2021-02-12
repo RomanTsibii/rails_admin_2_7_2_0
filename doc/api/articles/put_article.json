@@ -32,10 +32,10 @@
     {
       "request_method": "PUT",
       "request_path": "/api/v1/articles/3",
-      "request_body": "{\"article\":{\"title\":\"Article title\",\"content\":{\"id\":3,\"name\":\"content\",\"body\":\"Action text: content\",\"record_type\":\"Article::Translation\",\"record_id\":3,\"created_at\":\"2021-02-11T17:19:16.257Z\",\"updated_at\":\"2021-02-11T17:19:16.257Z\"}}}",
+      "request_body": "{\"article\":{\"title\":\"Article title\",\"content\":{\"id\":3,\"name\":\"content\",\"body\":\"Action text: content\",\"record_type\":\"Article::Translation\",\"record_id\":3,\"created_at\":\"2021-02-12T09:33:21.380Z\",\"updated_at\":\"2021-02-12T09:33:21.380Z\"}}}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MTMxNTAzNTZ9.cp6pZRCrAUZV0oBXwsr8499GnpiEhgeHBob4KMBtLY4",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MTMyMDg4MDF9.btsR9PUPjb8nY6Kj8V9JlMJj1UhF4GMjOsdy4L_WiNs",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -44,7 +44,7 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 3,\n  \"title\": \"Article title\",\n  \"content\": \"<div class=\\\"trix-content\\\">\\n  {\\\"id\\\"=&gt;3, \\\"name\\\"=&gt;\\\"content\\\", \\\"body\\\"=&gt;\\\"Action text: content\\\", \\\"record_type\\\"=&gt;\\\"Article::Translation\\\", \\\"record_id\\\"=&gt;3, \\\"created_at\\\"=&gt;\\\"2021-02-11T17:19:16.257Z\\\", \\\"updated_at\\\"=&gt;\\\"2021-02-11T17:19:16.257Z\\\"}\\n</div>\\n\",\n  \"locale\": \"en\"\n}",
+      "response_body": "{\n  \"id\": 3,\n  \"title\": \"Article title\",\n  \"content\": \"<div class=\\\"trix-content\\\">\\n  {\\\"id\\\"=&gt;3, \\\"name\\\"=&gt;\\\"content\\\", \\\"body\\\"=&gt;\\\"Action text: content\\\", \\\"record_type\\\"=&gt;\\\"Article::Translation\\\", \\\"record_id\\\"=&gt;3, \\\"created_at\\\"=&gt;\\\"2021-02-12T09:33:21.380Z\\\", \\\"updated_at\\\"=&gt;\\\"2021-02-12T09:33:21.380Z\\\"}\\n</div>\\n\",\n  \"locale\": \"en\"\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -53,10 +53,10 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"35d72add6b9e2fb70dec9e65ce1fb626\"",
+        "ETag": "W/\"5106e2b40df8315fb4a2e2a83d376ba5\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "6f920cd5-a617-4334-878a-ad52ca92628d",
-        "X-Runtime": "0.048260",
+        "X-Request-Id": "d96a8622-49cc-4ed4-b28d-a9d9448e11af",
+        "X-Runtime": "0.061018",
         "Content-Length": "345"
       },
       "response_content_type": "application/json; charset=utf-8",
